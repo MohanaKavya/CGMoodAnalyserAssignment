@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 public class MoodAnalyser {
 	
-	public String analyseMood(String message) {
+private String message;
+	
+	public MoodAnalyser() {}
+	
+	public MoodAnalyser(String message) {
+		this.message = message;
+	}
+	
+	public String analyseMood() {
 			if(message.contains("Sad"))
 				return "SAD";
 			else
@@ -18,8 +26,8 @@ public class MoodAnalyser {
 			System.out.println("Enter the Message :");
 			String message = sc.nextLine();
 
-			MoodAnalyser moodAnalyser = new MoodAnalyser();
-			String mood = moodAnalyser.analyseMood(message);
+			MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+			String mood = moodAnalyser.analyseMood();
 			System.out.println(mood);
 
 		}
