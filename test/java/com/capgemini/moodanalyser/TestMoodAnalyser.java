@@ -6,9 +6,12 @@ import org.junit.Test;
 public class TestMoodAnalyser {
 	
 	@Test
-	public void testMoodAnalysis_GivenNullMood_ReturnHappy() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
-		String mood = moodAnalyser.analyseMood();
-		Assert.assertEquals("HAPPY", mood);
+	public void testMoodAnalysis_givenNullMoodShouldThrowException() {
+		MoodAnalyser moodAnalyser = new MoodAnalyser("NULL");
+		try {
+			String mood = moodAnalyser.analyseMood();
+		} catch (MoodAnalysisException e) {
+			Assert.assertEquals(MoodAnalysisException.MoodAnalysisError.NULL, e.type);
+		}
 	}
 }
