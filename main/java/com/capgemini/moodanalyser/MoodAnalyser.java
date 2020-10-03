@@ -20,7 +20,12 @@ public class MoodAnalyser {
 	}
 	
 	public String analyseMood() throws MoodAnalysisException {
-		
+		if(message.equals(null)) {
+			throw new MoodAnalysisException("Message Enter is Null", MoodAnalysisError.NULL);
+		}
+		if(message.equals("")) {
+			throw new MoodAnalysisException("Message Entered is Empty", MoodAnalysisError.EMPTY);
+		}		
 		if(message.contains("Sad"))
 				return "SAD";
 			else
