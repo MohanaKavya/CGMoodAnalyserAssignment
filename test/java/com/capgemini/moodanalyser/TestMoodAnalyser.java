@@ -4,16 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestMoodAnalyser {
-	@Test
-	public void testMoodAnalysis_GivenSadMood_ReturnSad() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
-		String mood = moodAnalyser.analyseMood();
-		Assert.assertEquals("SAD", mood);
-	}
 	
 	@Test
-	public void testMoodAnalysis_GivenAnyMood_ReturnHappy() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Any Mood");
+	public void testMoodAnalysis_GivenNullMood_ReturnHappy() {
+		MoodAnalyser moodAnalyser = new MoodAnalyser();
 		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
